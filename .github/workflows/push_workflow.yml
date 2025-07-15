@@ -1,0 +1,28 @@
+name: Build Spring app
+on: 
+    push:
+        branches:
+            - main            
+    workflow_dispatch:
+jobs:
+    build:
+        runs-on: ubuntu-20.04
+        steps:
+            #Etape 1: chercher dans le marketplace l'action pour configurer le jdk
+          - name: SetupJDK
+            uses: actions/setup-java@v4
+            with:
+                distribution: 'temurin'
+                java-version: '17'
+                
+            #Etape 2: récuperation du projet
+          - name: checkout project
+            uses: actions/checkout@v4
+
+            #Etape 3: installation des dépendances
+          - name: Install dependencies
+            run: mvb dependency:resolve
+
+            #Etape 4: build de l'app
+          - name: Build de l'application
+            run: mvn clean package
