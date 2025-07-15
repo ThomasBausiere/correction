@@ -14,14 +14,14 @@ jobs:
             with:
                 distribution: 'temurin'
                 java-version: '17'
-                
+
             #Etape 2: récuperation du projet
           - name: checkout project
             uses: actions/checkout@v4
 
             #Etape 3: installation des dépendances
           - name: Install dependencies
-            run: mvb dependency:resolve
+            run: mvn dependency:resolve
 
             #Etape 4: build de l'app
           - name: Build de l'application
