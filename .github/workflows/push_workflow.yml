@@ -15,7 +15,7 @@ jobs:
                 distribution: 'temurin'
                 java-version: '17'
 
-            #Etape 2: récuperation du projet
+            #Etape 2: récuperation du projet Java
           - name: checkout project
             uses: actions/checkout@v4
 
