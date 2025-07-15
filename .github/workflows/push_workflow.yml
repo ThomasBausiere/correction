@@ -23,6 +23,6 @@ jobs:
           - name: Install dependencies
             run: mvn dependency:resolve
 
-            #Etape 4: build de l'app
+            #Etape 4: build de l'app java
           - name: Build de l'application
             run: mvn clean package -DskipTests
